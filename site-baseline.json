@@ -1,8 +1,10 @@
 {
-  "sha256": "15a63273907168c0b4769817bcd7074d2c33091d1785232829d862774497bb70",
+  "sha256": "26d06b04707ba60e6a35e34ce66c1c2b6abe4d7c7b9c58c4b1a329c555df504f",
   "files": [
     ".nojekyll",
-    "assets/style.css",
+    "assets/editorial/mark.svg",
+    "assets/editorial/site.js",
+    "assets/editorial/style.css",
     "cli-reference.html",
     "getting-started.html",
     "index.html",
@@ -14,16 +16,18 @@
     "write-docs.html"
   ],
   "digests": {
-    "index.html": "999b9d89b0d6e1a157dc0c1a420330a7075d5dcbaa6d549b516e00ae25fae2e0",
-    "getting-started.html": "e4cc3b773be3d5f160dded77c291e74c7ee0d98d529eaebfa8f66e02c597876d",
-    "write-docs.html": "932a60b2f4cb1644a9ab4f8371cf5ed4bf27aa6f2b1622037bcfc96d913c8b6a",
-    "render-site.html": "2a1a7e64b8f01b8e8fde2560acde131fe6148fed29413004b34a077e6c8da955",
-    "publish-site.html": "45a2e785d26682ee2b0b98a1e7fa9f9f3a3e44d1458c41525f67a95b7f1d0850",
-    "plugin-reference.html": "4c084485a7c45771d960bc2f1d2c0b865a9156a19b8191e8ffa6c97fb36d33ba",
-    "cli-reference.html": "b655dd032d91e73846101174514e51d2f787baeb9f78066bbf20bdde5febbbaf",
-    "troubleshooting.html": "c5764d26eff8f3db5be98b2981e45d6fefcc050459802c4c38d01521520e2b3e",
-    "releases.html": "9eda4b358e803e6ecafeb5cef6d7b94ca7b864f307d8ca443513aea746098581",
-    "assets/style.css": "c24668708d9b3a7b255bf6b32edcb19c295f766f3fa0dd9cee11c90b141960d6",
+    "index.html": "1cb66f014c72c94f2e8e4c08783a4240a765ab1da032e19cd8d25a7efbafd185",
+    "getting-started.html": "2f051066696e6670aafe19001f9c2dd89549e5361926eec7739578c14c41df33",
+    "write-docs.html": "2792c012b8a0783a8d04112e95d70733ece7d1110c8a2e2a91a029f39aeb438b",
+    "render-site.html": "7882c3e57a7cb983d3bd41cf8e99b4b18894e30aeb3e27ae14c8aa718c65c188",
+    "publish-site.html": "6945d75a2947ee60d5b8696c8f054d20bf81796afc5bc3299e9a994972124516",
+    "troubleshooting.html": "1feb316fdf04b150c8040d6642ee4093e51094cd1deca3f1153b4010eb0addac",
+    "releases.html": "c0356af8cee46e6358c2e6937b58c4fa4d4f3a086c7a98f7fcc2eef25212e50f",
+    "plugin-reference.html": "a5734118b250539094e415b0c4f744da772fb68851e99fd9c94aab8004dd3318",
+    "cli-reference.html": "74979610cad4c41423e5c4bd2c22bc10af26472797bd64eac1a397a15e0e7996",
+    "assets/editorial/style.css": "c5ab696ac2a57fa4668c81ad3f3f271e3072b6b9071a20df191ec1775a9137ec",
+    "assets/editorial/site.js": "882f87235ac89b3d9d846643761274707ad75f101219cbbbb3abbf4553a28784",
+    "assets/editorial/mark.svg": "55f8b7a6c0224bb5a84b3afb84b0d9fc8c2786d1639ce367817ad2c473c09b2d",
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   }
 }
