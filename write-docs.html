@@ -58,7 +58,9 @@
   <h2 id="update-page">修改已有页面</h2>
   <ol class="steps">
     <li>只改 <code>docs/public/site/</code> 下的源文件，不手改 <code>docs/public/rendered/</code>。</li>
-    <li>版本、标签和安装命令只引用已经发布并核对过的值。组件版本变化时更新配置中的静态占位符。</li>
+    <li>先运行 <code>--status</code> 查看上次覆盖以后发生的变化，再结合 Git diff 和制品上下文判断受影响页面。</li>
+    <li>版本和标签通过 <code>site.versionSources</code> 引用发布单元现有的权威 JSON 版本源，不在页面或静态 token 中复制；页面另行说明该版本是候选还是已验证发布。</li>
+    <li>完成事实、理解和表达检查以及读者任务冷读，再运行 <code>--refresh-coverage</code>。</li>
     <li>重新渲染，检查源与产物差异，再执行 <code>--check</code>。</li>
     <li>页面内容通过后，按<a href="publish-site.html#daily-update">日常更新</a>单独发布站点。</li>
   </ol>
@@ -72,7 +74,7 @@
     <li>链接指向现有页面，资源路径从当前 HTML 文件计算。</li>
     <li>正文能在窄屏阅读，代码块不会撑破页面。</li>
   </ul>
-  <p><code>skill-family-docs-style-guard</code> 可用于起草和审校中文技术内容。它附带的检测器适合 Markdown 或纯文本；HTML 页面先抽取正文文本，再运行检测器，避免标签污染统计。</p>
+  <p><code>skill-family-docs-style-guard</code> 可用于起草和审校中文技术内容。附带检测器会从 HTML 的 <code>&lt;main&gt;</code> 抽取正文，并排除导航、页脚、样式、脚本和代码块。脚本退出 0 只表示没有命中硬性规则；任务式冷读仍要确认读者能完成目标。</p>
 </main>
 <nav class="pager" aria-label="教程翻页">
     <a href="getting-started.html">← 快速开始</a>

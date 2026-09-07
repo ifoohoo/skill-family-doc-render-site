@@ -1,5 +1,5 @@
 {
-  "sha256": "fbbf7fca1966419c2a6d745689eb606d3c60cbe51a6e58c9d5fafec469955e3b",
+  "sha256": "15a63273907168c0b4769817bcd7074d2c33091d1785232829d862774497bb70",
   "files": [
     ".nojekyll",
     "assets/style.css",
@@ -14,15 +14,15 @@
     "write-docs.html"
   ],
   "digests": {
-    "index.html": "cc797ee63feb53be5461e59333e40b8009125feb2eb011bfccd6dce74db81b57",
-    "getting-started.html": "fcb9305aeea283186f3ce5942625e979d8cf4b6627f5afbc2c8d5d094d34f250",
-    "write-docs.html": "0dc96ea96939579a88e2eb5f46fcc0279289487d4fafbd2a59455c91a9f6888c",
-    "render-site.html": "4ab8fb9440b31ec4b6e0af253ee70d5e0a01bbbabda12afc95a81651a2784723",
-    "publish-site.html": "c1636622c4cfff24c2fb078d156dca202360c460a0a677ce28962a4a733f7393",
-    "plugin-reference.html": "b7e079c3c5c46f4f0c5f67032f5f9a9354161a2e2050338035356c7059fd4b3b",
-    "cli-reference.html": "b7876c965495c7f9e9b4157fc745ed4ff6132e528fe62187d4324a1d69835739",
-    "troubleshooting.html": "5071d24764634f0549ab8cd925b144f0ae3596774ee64b2cb4bd651dd91f3ddf",
-    "releases.html": "62ca20b535bccc31aca4e27ec569cd0dff1d64f0ff5c7c6afe3a7dc0de0be71a",
+    "index.html": "999b9d89b0d6e1a157dc0c1a420330a7075d5dcbaa6d549b516e00ae25fae2e0",
+    "getting-started.html": "e4cc3b773be3d5f160dded77c291e74c7ee0d98d529eaebfa8f66e02c597876d",
+    "write-docs.html": "932a60b2f4cb1644a9ab4f8371cf5ed4bf27aa6f2b1622037bcfc96d913c8b6a",
+    "render-site.html": "2a1a7e64b8f01b8e8fde2560acde131fe6148fed29413004b34a077e6c8da955",
+    "publish-site.html": "45a2e785d26682ee2b0b98a1e7fa9f9f3a3e44d1458c41525f67a95b7f1d0850",
+    "plugin-reference.html": "4c084485a7c45771d960bc2f1d2c0b865a9156a19b8191e8ffa6c97fb36d33ba",
+    "cli-reference.html": "b655dd032d91e73846101174514e51d2f787baeb9f78066bbf20bdde5febbbaf",
+    "troubleshooting.html": "c5764d26eff8f3db5be98b2981e45d6fefcc050459802c4c38d01521520e2b3e",
+    "releases.html": "9eda4b358e803e6ecafeb5cef6d7b94ca7b864f307d8ca443513aea746098581",
     "assets/style.css": "c24668708d9b3a7b255bf6b32edcb19c295f766f3fa0dd9cee11c90b141960d6",
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   }

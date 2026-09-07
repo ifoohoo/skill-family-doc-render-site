@@ -34,13 +34,17 @@
   <p><strong>现象：</strong>退出码为 1，提示源生成结果、文件集合或磁盘摘要不一致。</p>
   <p><strong>处理：</strong>确认源文件改动正确，运行写盘渲染，再检查生成差异。所有内容修改都回到 <code>site.dir</code>，不要手改 <code>site.target</code>。</p>
 
+  <h2><code>--status</code> 报覆盖落后</h2>
+  <p><strong>现象：</strong>退出码为 1，并列出上次覆盖以后变化的文件和建议的 Git diff 命令。</p>
+  <p><strong>处理：</strong>先读实际差异和相关制品，判断变化是否影响公开说明。有影响时修改页面；无影响时保留判断。完成 style-guard 检查与任务式冷读以后，运行 <code>--refresh-coverage</code>，再执行完整文档检查。</p>
+
   <h2>配置校验失败</h2>
   <p><strong>现象：</strong>退出码为 2，并给出工作区渲染配置、<code>pages.json</code> 或具体字段路径。</p>
   <p><strong>处理：</strong>先修复 JSON 语法，再按字段路径核对 Schema。页面清单中的每个 <code>id</code> 都要有同名 HTML 文件，源目录和目标目录不能相同或互相包含。</p>
 
   <h2>提示占位符没有替换</h2>
   <p><strong>现象：</strong>退出码为 2，并列出形如 <code>&#64;NAME&#64;</code> 的内容和文件。</p>
-  <p><strong>处理：</strong>修正占位符拼写，或者在 <code>site.tokens</code> 增加经过核对的值。组件版本只写已经发布并验证的版本。</p>
+  <p><strong>处理：</strong>修正占位符拼写。版本占位符在 <code>site.versionSources</code> 中绑定权威 JSON 来源；只有非版本的静态内容才放入 <code>site.tokens</code>。</p>
 
   <h2>泄漏扫描阻止写盘</h2>
   <p><strong>现象：</strong>退出码为 1，错误指出私有路径、内部标识或凭据模式。</p>

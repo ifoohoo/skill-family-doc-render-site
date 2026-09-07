@@ -25,6 +25,9 @@
   <p class="eyebrow">教程 · 约 10 分钟</p>
   <h1>完成第一次站点渲染</h1>
   <p class="lead">从一个空目录创建虚构项目。成功标志是命令退出码为 0，并且浏览器能打开生成的首页。</p>
+  <div class="callout warning">
+    <p>这一教程覆盖尚未发布的渲染器 <code>0.3.0</code> 候选。外部读者要等该精确版本发布并通过验证后再执行安装与 <code>npx</code> 命令；当前维护者只在渲染器工作区使用仓内 CLI 做候选验证。</p>
+  </div>
 
   <h2>准备环境</h2>
   <ul class="checklist">
@@ -46,7 +49,7 @@ node --version</code></pre>
       <pre><code>mkdir doc-render-demo
 cd doc-render-demo
 npm init -y
-npm install --save-dev skill-family-doc-render@0.2.1
+npm install --save-dev --save-exact skill-family-doc-render@0.3.0
 mkdir -p site-src</code></pre>
     </li>
     <li>
@@ -85,7 +88,11 @@ mkdir -p site-src</code></pre>
     "site": {
       "dir": "site-src",
       "target": "docs",
-      "pages": "pages.json"
+      "pages": "pages.json",
+      "coverage": {
+        "lock": "site-coverage-lock.json",
+        "inputs": ["package.json", "site-src/**"]
+      }
     }
   }],
   "forbiddenPublicPaths": [],
@@ -93,9 +100,11 @@ mkdir -p site-src</code></pre>
 }</code></pre>
   <ol class="steps" start="5">
     <li>
-      <strong>生成并检查站点。</strong>
-      <pre><code>npx skill-family-doc-render@0.2.1 --repo demo-site
-npx skill-family-doc-render@0.2.1 --repo demo-site --check</code></pre>
+      <strong>建立覆盖快照，再生成并检查站点。</strong> 示例内容已经完成核对，因此可以先刷新覆盖。以下发布后命令都在演示项目根目录运行。候选维护者先取得渲染器源码检出中 CLI 文件的绝对路径，再用 <code>node "$DOC_RENDER_CLI"</code> 替换每行的 <code>npx skill-family-doc-render@0.3.0</code>；相对路径不能从演示目录直接照搬。
+      <pre><code>npx skill-family-doc-render@0.3.0 --refresh-coverage --repo demo-site
+npx skill-family-doc-render@0.3.0 --repo demo-site
+npx skill-family-doc-render@0.3.0 --repo demo-site --check
+npx skill-family-doc-render@0.3.0 --status --repo demo-site</code></pre>
     </li>
     <li>
       <strong>打开结果。</strong> 直接打开 <code>docs/index.html</code>，页面应显示标题、顶部导航和页脚。
@@ -103,7 +112,7 @@ npx skill-family-doc-render@0.2.1 --repo demo-site --check</code></pre>
   </ol>
 
   <h2>应该看到什么</h2>
-  <p>生成目录包含首页、<code>.nojekyll</code> 和 <code>site-baseline.json</code>。单页示例的上一页和下一页都会回到首页，页脚标明生成工具与许可。</p>
+  <p>项目根会增加 <code>site-coverage-lock.json</code>，生成目录包含首页、<code>.nojekyll</code> 和 <code>site-baseline.json</code>。最后一条状态命令返回 0，并显示当前版本来源和覆盖一致。单页示例的上一页和下一页都会回到首页，页脚标明生成工具与许可。</p>
   <p>到这里已经完成第一次成功。只想把现有源文件变成页面，可以直接转到<a href="render-site.html">生成站点</a>；准备开始写内容，则继续阅读<a href="write-docs.html">编写文档</a>。</p>
 
   <h2>接入真实项目</h2>

@@ -24,7 +24,7 @@
 <main id="content">
   <p class="eyebrow">操作指南</p>
   <h1>从页面源生成完整站点</h1>
-  <p class="lead">渲染器读取工作区根的渲染配置，注入导航、翻页和页脚，替换版本占位符，复制资源并生成基线。</p>
+  <p class="lead">渲染器读取工作区根的渲染配置，注入导航、翻页和页脚，并从权威 JSON 文件取得版本。覆盖状态另外说明产品变化是否已经经过文档影响判断。</p>
 
   <h2>配置一个站点</h2>
   <p>每个带 <code>site</code> 字段的项目都会被渲染。目录全部相对该项目的 <code>source</code> 计算。</p>
@@ -36,16 +36,32 @@
     "dir": "docs/public/site",
     "target": "docs/public/rendered",
     "pages": "pages.json",
-    "tokens": {
-      "&#64;PACKAGE_VERSION&#64;": "1.2.3"
+    "versionSources": {
+      "&#64;PACKAGE_VERSION&#64;": {
+        "source": "package.json",
+        "pointer": "/version"
+      }
+    },
+    "coverage": {
+      "lock": "site-coverage-lock.json",
+      "inputs": ["package.json", "docs/public/site/**"]
     }
   }
 }</code></pre>
   <ul>
     <li><code>dir</code> 是手写页面源，<code>target</code> 是可删除并重建的生成目录。</li>
     <li><code>pages</code> 位于源目录内，列出页面编号、标题、顺序和翻页设置。</li>
-    <li><code>tokens</code> 保存经过核对的静态替换值。页面仍有大写占位符残留时，渲染直接失败。</li>
+    <li><code>versionSources</code> 让页面直接读取发布单元已有的 JSON 版本源，不复制静态版本号。</li>
+    <li><code>coverage</code> 声明需要审阅的产品输入和自动生成的快照位置。页面仍有大写占位符残留时，渲染直接失败。</li>
   </ul>
+
+  <h2>先判断变化，再刷新覆盖</h2>
+  <ol class="steps">
+    <li>运行 <code>--status --repo &lt;name&gt;</code>，查看绑定版本、覆盖位置和变化文件。</li>
+    <li>结合 Git diff 与 artifact-graph 上下文判断变化是否影响读者。有影响时只改相关页面；无影响时保留不改正文的判断。</li>
+    <li>对正文完成 style-guard 检查和任务式冷读，再运行 <code>--refresh-coverage --repo &lt;name&gt;</code>。</li>
+    <li>重新渲染并运行 <code>--check</code>。发布前的文档门会再次只读检查覆盖、文字、渲染和链接。</li>
+  </ol>
 
   <h2>执行渲染</h2>
   <ol class="steps">
@@ -63,7 +79,7 @@
   </ol>
 
   <h2>基线表示什么</h2>
-  <p><code>site-baseline.json</code> 记录生成文件集合、每个文件的摘要和整棵产物树的摘要。<code>--check</code> 会重新在内存中渲染，并同时比较源生成结果、磁盘文件集合和磁盘内容。</p>
+  <p><code>site-baseline.json</code> 记录生成文件集合、每个文件的摘要和整棵产物树的摘要。<code>--check</code> 会重新在内存中渲染，并同时比较源生成结果、磁盘文件集合和磁盘内容。它与覆盖快照分工不同：渲染基线回答“页面是否同步生成”，覆盖快照回答“产品输入是否重新审阅”。</p>
   <div class="callout">
     <p>基线不一致表示源、渲染器或磁盘产物发生了变化。确认源改动正确后重新渲染；不要直接修改生成目录来消除差异。</p>
   </div>

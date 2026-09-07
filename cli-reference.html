@@ -22,9 +22,10 @@
     <a href="releases.html">版本与升级</a>
   </nav>
 <main id="content">
-  <p class="eyebrow">参考 · skill-family-doc-render 0.2.1</p>
+  <p class="eyebrow">参考 · skill-family-doc-render 0.3.0</p>
   <h1>命令与配置速查</h1>
   <p class="lead">所有命令都在工作区渲染配置所在的根目录运行。写盘模式重建目标目录，<code>--check</code> 只读。</p>
+  <p class="meta"><code>0.3.0</code> 是未发布候选。当前从渲染器工作区运行 <code>node packages/skill-family-doc-render/bin/skill-family-doc-render.mjs</code>；只有该版本发布并通过验证后，外部项目才使用精确版本的 npm 或 npx 入口。</p>
 
   <h2>命令</h2>
   <div class="table-wrap">
@@ -34,6 +35,8 @@
         <tr><td><code>skill-family-doc-render</code></td><td>渲染配置中所有带 <code>site</code> 的项目</td><td>是</td></tr>
         <tr><td><code>skill-family-doc-render --repo &lt;name&gt;</code></td><td>只渲染指定项目</td><td>是</td></tr>
         <tr><td><code>skill-family-doc-render --check</code></td><td>比较内存渲染、磁盘产物和基线</td><td>否</td></tr>
+        <tr><td><code>skill-family-doc-render --status --repo &lt;name&gt;</code></td><td>显示绑定版本、上次覆盖位置、变化文件和建议的 Git diff 命令</td><td>否</td></tr>
+        <tr><td><code>skill-family-doc-render --refresh-coverage --repo &lt;name&gt;</code></td><td>在语义判断和文字检查完成后刷新覆盖快照</td><td>是，只写覆盖快照</td></tr>
         <tr><td><code>skill-family-doc-render --assert-git</code></td><td>渲染前确认全部预期产物已被 Git 索引跟踪</td><td>渲染行为不变；Git 查询只读</td></tr>
         <tr><td><code>skill-family-doc-render --help</code></td><td>显示用法</td><td>否</td></tr>
       </tbody>
@@ -56,6 +59,9 @@
         <tr><td><code>site.target</code></td><td>生成目录，相对项目根；必须与源目录分开</td></tr>
         <tr><td><code>site.pages</code></td><td>页面清单文件名，位于源目录</td></tr>
         <tr><td><code>site.tokens</code></td><td>额外静态占位符和值</td></tr>
+        <tr><td><code>site.versionSources</code></td><td>把版本占位符绑定到权威 JSON 文件、JSON Pointer 和可选的前后缀</td></tr>
+        <tr><td><code>site.coverage.lock</code></td><td>自动生成的最小覆盖快照路径，相对项目根</td></tr>
+        <tr><td><code>site.coverage.inputs</code></td><td>需要完成文档影响判断的产品输入；支持文件与 glob，版本源自动加入</td></tr>
         <tr><td><code>forbiddenPublicPaths</code></td><td>追加到泄漏扫描的项目路径字面量</td></tr>
         <tr><td><code>privateLiterals</code></td><td>追加到泄漏扫描的其他私有字面量</td></tr>
       </tbody>
@@ -70,9 +76,14 @@
     <li><code>&lt;!--NAV--&gt;</code> 注入顶部导航。</li>
     <li><code>&lt;!--PAGER--&gt;</code> 注入循环翻页链。</li>
     <li><code>&lt;!--FOOTER--&gt;</code> 注入所有者、许可和生成器信息。</li>
-    <li><code>@{NAME}_VERSION@</code> 和 <code>@{NAME}_TAG@</code> 从项目包名和版本自动派生。</li>
-    <li><code>site.tokens</code> 可增加其他静态占位符。</li>
+    <li><code>@{NAME}_VERSION@</code> 和 <code>@{NAME}_TAG@</code> 默认从项目 <code>package.json</code> 派生。</li>
+    <li><code>site.versionSources</code> 用于一个站点展示多个发布单元的版本。每项通过 <code>source</code> 和 <code>pointer</code> 读取 JSON 值，标签可以增加 <code>prefix</code> 或 <code>suffix</code>。</li>
+    <li><code>site.tokens</code> 只保存不属于版本事实的静态占位符。</li>
   </ul>
+
+  <h2>覆盖状态</h2>
+  <p><code>--status</code> 把当前覆盖输入与 <code>site-coverage-lock.json</code> 比较。它只读文件和 Git 历史：一致返回 0，快照缺失或落后返回 1，配置或工具错误返回 2。</p>
+  <p><code>--refresh-coverage</code> 只记录输入文件摘要、聚合摘要和现有 artifact-graph 版本锁摘要。它不保存产品版本、页面结论、审阅人或批准状态。Agent 完成变化语义判断和 style-guard 检查后才能运行该命令；发布检查只调用 <code>--status</code>。</p>
 
   <h2>退出码</h2>
   <div class="table-wrap">
@@ -80,8 +91,8 @@
       <thead><tr><th>退出码</th><th>类别</th><th>常见原因</th></tr></thead>
       <tbody>
         <tr><td><code>0</code></td><td>成功</td><td>渲染完成，或检查没有发现差异</td></tr>
-        <tr><td><code>1</code></td><td>漂移或内容保护</td><td>基线漂移、泄漏命中、文件未被 Git 跟踪、基线缺失或损坏</td></tr>
-        <tr><td><code>2</code></td><td>配置</td><td>JSON 或 Schema 不合法、项目参数无效、占位符残留</td></tr>
+        <tr><td><code>1</code></td><td>需要处理的状态</td><td>覆盖快照缺失或落后、渲染基线漂移、泄漏命中、文件未被 Git 跟踪、基线缺失或损坏</td></tr>
+        <tr><td><code>2</code></td><td>配置或工具错误</td><td>JSON 或 Schema 不合法、项目参数无效、覆盖配置缺失、占位符残留</td></tr>
       </tbody>
     </table>
   </div>

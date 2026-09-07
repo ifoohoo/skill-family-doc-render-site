@@ -37,14 +37,14 @@
     <li><strong>创建空公开仓库。</strong> 目标为 <code>ifoohoo/skill-family-doc-render-site</code>，不预先生成 README 或初始提交。</li>
     <li><strong>先做只读评估。</strong>
       <pre><code>npx release-skill@0.9.14 route \
-  --root . --target-version 0.1.0 --json
+  --root . --target-version 0.1.1 --json
 npx release-skill@0.9.14 assess \
   --root . --offline --json</code></pre>
     </li>
     <li><strong>生成生产计划。</strong> 首批实现包含页面、生成物、版本文件和配置，按实际路由使用完整工作流。
       <pre><code>npx release-skill@0.9.14 prepare \
   --root . --online --production \
-  --target-version 0.1.0 \
+  --target-version 0.1.1 \
   --unit workspace-site --json</code></pre>
     </li>
     <li><strong>审查并批准冻结内容。</strong> 核对计划摘要、公开文件、目标仓库、分支、标签和外部动作，再使用计划返回的路径执行批准、发布和验证。</li>
@@ -54,14 +54,15 @@ npx release-skill@0.9.14 assess \
 
   <h2 id="daily-update">日常更新</h2>
   <ol class="steps">
-    <li>回到<a href="write-docs.html#update-page">页面源</a>修改内容，不手改生成物。</li>
-    <li>重新渲染并运行只读检查，审查页面和基线差异。</li>
+    <li>先运行覆盖状态命令，结合 Git diff 与制品上下文判断变化是否影响页面。</li>
+    <li>需要改正文时回到<a href="write-docs.html#update-page">页面源</a>修改，不手改生成物；不影响读者时保留判断。</li>
+    <li>完成 style-guard 检查和任务式冷读，再刷新覆盖快照、重新渲染并运行 <code>check:release-docs</code>。</li>
     <li>递增 <code>docs/public/release.json</code> 的补丁版本。</li>
     <li>只选择 <code>workspace-site</code> 生成生产计划。未指定 <code>--unit</code> 会选中全部发布单元。</li>
     <li>核对并批准冻结计划，再执行发布和验证。发现远端已经前进时停止，重新准备，不强推。</li>
     <li>继续执行网页上线检查。</li>
   </ol>
-  <p>只改文档时，npm 包和插件版本保持不变。软件先发新版时，等该版本验证完成，再更新本站的版本投影并单独发布站点。</p>
+  <p>只改文档时，npm 包和插件版本保持不变。软件先发新版时，等该版本验证完成，再重新渲染本站；版本占位符会从各发布单元的 JSON 版本源读取当前值。</p>
 
   <h2>撤销错误内容</h2>
   <p>从上一个已经验证的站点内容恢复源文件，生成一个新的站点补丁版本，再按日常更新流程普通推进。旧标签和 Release 保留，不强推，也不覆盖发布历史。</p>

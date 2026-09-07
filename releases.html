@@ -32,32 +32,33 @@
       <tbody>
         <tr>
           <td><code>skill-family-docs</code> 插件</td>
-          <td><code>0.2.0</code></td>
-          <td><a href="https://github.com/ifoohoo/skill-family-docs/releases/tag/skill-family-docs-v0.2.0" rel="noopener noreferrer">GitHub Release</a></td>
+          <td><code>0.2.1</code></td>
+          <td>未发布候选；发布、验证并由 Skill Family Hub 接受后才可安装</td>
         </tr>
         <tr>
           <td><code>skill-family-doc-render</code> npm 包</td>
-          <td><code>0.2.1</code></td>
-          <td><a href="https://www.npmjs.com/package/skill-family-doc-render/v/0.2.1" rel="noopener noreferrer">npm 版本页</a> · <a href="https://github.com/ifoohoo/skill-family-doc-render/releases/tag/skill-family-doc-render-v0.2.1" rel="noopener noreferrer">GitHub Release</a></td>
+          <td><code>0.3.0</code></td>
+          <td>未发布候选；发布并通过验证后才会有对应 npm 版本与 GitHub Release</td>
         </tr>
         <tr>
           <td>本站公开快照</td>
-          <td><code>0.1.0</code></td>
-          <td>站点仓库的 <code>site-v0.1.0</code> 标签与 Release</td>
+          <td><code>0.1.1</code></td>
+          <td>站点仓库的 <code>site-v0.1.1</code> 标签与 Release</td>
         </tr>
       </tbody>
     </table>
   </div>
-  <p class="meta">发布流程示例使用 <code>release-skill0.9.14</code>。它是维护工具版本，不是本站产品版本。</p>
+  <p class="meta">发布流程示例使用 <code>release-skill@0.9.14</code>。它是维护工具版本，不是本站产品版本。</p>
 
   <h2>安装文档插件</h2>
+  <p><code>0.2.1</code> 当前也是未发布候选。下面说明目标宿主的安装入口，但只能在该精确版本完成发布、验证和市场登记后执行。</p>
   <h3>Kimi Code</h3>
   <p>Skill Family Hub 的 Kimi 市场清单已经登记 <code>skill-family-docs</code> 来源。先添加市场，再从插件浏览器选择该插件：</p>
   <pre><code>/plugins marketplace https://raw.githubusercontent.com/ifoohoo/skill-family-hub/main/kimi-marketplace.json</code></pre>
   <h3>CodeBuddy</h3>
   <p>插件 Release 提供以下市场入口。当前文档没有把登录态和真实宿主安装写成已验证结果；命令失败时以宿主实际提示为准。</p>
   <pre><code>codebuddy plugin marketplace add ifoohoo/skill-family-hub
-codebuddy plugin install skill-family-docs@0.2.0</code></pre>
+codebuddy plugin install skill-family-docs@0.2.1</code></pre>
   <h3>WorkBuddy</h3>
   <p>桌面端可添加同一个 Skill Family Hub，再从插件面板选择 <code>skill-family-docs</code>。仓库只证明 WorkBuddy adapter 的文件闭包，不能代替桌面端真实安装验证。</p>
 
@@ -67,21 +68,24 @@ codebuddy plugin install skill-family-docs@0.2.0</code></pre>
     <li>核对 Node.js 约束、配置 Schema、基线格式和退出码是否变化。</li>
     <li>用精确版本更新依赖和锁文件。</li>
     <li>重新渲染站点，审查全部产物和基线，再运行项目权威门禁。</li>
-    <li>升级完成并验证后，更新本站的版本投影。</li>
+    <li>升级完成并验证后，重新渲染本站；版本占位符会从绑定的 JSON 版本源读取新值。</li>
   </ol>
+
+  <h2>0.3.0 候选增加了什么</h2>
+  <p>这一候选增加覆盖输入快照、只读状态查询、覆盖刷新与 JSON 版本来源。它们当前只通过仓内 CLI 验证，不属于 npm 已发布的 0.2.1；外部项目在 0.3.0 发布并通过验证前不能按本页新命令升级。</p>
 
   <h2>升级文档插件</h2>
   <ol class="steps">
     <li>核对 GitHub Release、平台清单和 Skill Family Hub 登记。</li>
     <li>检查技能名、适用场景、输入输出和动作边界是否变化。</li>
     <li>分别在目标宿主验证发现和安装。一个 adapter 的目录检查不能代替另一个宿主的真实安装。</li>
-    <li>更新<a href="plugin-reference.html">技能入口</a>及本站版本投影。</li>
+    <li>更新<a href="plugin-reference.html">技能入口</a>并重新渲染；本站从插件的 JSON 版本源取得版本。</li>
   </ol>
 
   <h2>0.2.0 需要留意什么</h2>
   <p>渲染器 0.2.0 的基线格式和退出码相对 0.1.x 有不兼容变化。旧站升级后需要重新渲染基线，不能直接沿用旧文件。插件 0.2.0 使用带 <code>skill-family-docs-</code> 前缀的六个技能名；调用时不要继续使用旧的裸名入口。</p>
-  <div class="callout">
-    <p>页面只展示已经核对的公开版本。工作区主分支提前递增时，本站继续保留上一个已验证版本，直到新版本发布并完成验证。</p>
+  <div class="callout warning">
+    <p>当前页面是候选预览，显示的工作区版本不等于公开可用版本。真正发布时必须再核对 npm、GitHub Release 与发布后验证结果；缺少任一项就保留上一个已验证版本。</p>
   </div>
 </main>
 
