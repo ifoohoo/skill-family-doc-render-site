@@ -17,7 +17,7 @@ python3 -m http.server 8000
 需要维护站点时，先在私有源工作区运行只读帮助命令，确认当前 release-skill 的参数和边界：
 
 ```sh
-npx release-skill@0.9.14 help --json
+npx release-skill@0.9.16 help --json
 ```
 
 ## 维护和发布
@@ -25,7 +25,7 @@ npx release-skill@0.9.14 help --json
 页面由私有工作区中的 `docs/public/site/*.md` 和 `pages.json` 生成。完整 HTML、主题 CSS、浏览器脚本和图标来自固定版本的 `editorial` 模板；项目不单独维护主题 CSS 或 JavaScript。公开仓库只接收渲染产物、基线、本说明和许可证。发现内容错误时，应回到 Markdown 源修改并重新渲染，不直接编辑公开产物。
 
 <!-- release-skill:capability:safe-first-command -->
-> **安全起点：** `npx release-skill@0.9.14 help --json` 只获取并显示帮助，不发布站点。需要处理站点时，先在源工作区运行只读评估和渲染检查。
+> **安全起点：** `npx release-skill@0.9.16 help --json` 只获取并显示帮助，不发布站点。需要处理站点时，先在源工作区运行只读评估和渲染检查。
 
 <!-- release-skill:capability:external-write-boundary -->
 > **外部写入边界：** 发布会更新 `ifoohoo/skill-family-doc-render-site` 的分支、标签和 GitHub Release；首次上线还会修改 GitHub Pages 设置。创建仓库、批准、发布和启用 Pages 前都需要当前任务的明确授权。
