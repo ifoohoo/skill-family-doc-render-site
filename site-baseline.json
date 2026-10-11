@@ -1,5 +1,5 @@
 {
-  "sha256": "e22804f86c4ae91d588ccfe5584b477c0988d040f6d64f741f144fa56a86e08b",
+  "sha256": "ca379c4e68e54b11f2fa1a1ec8328eba3e28016c6109602ba83b6380bad33741",
   "files": [
     ".nojekyll",
     "assets/editorial/mark.svg",
@@ -16,17 +16,17 @@
     "write-docs.html"
   ],
   "digests": {
-    "index.html": "439b41e77fc8af0a095280c88722f8874dbef45a02e92ff4f8f5b4d436138284",
-    "getting-started.html": "85a5b2ee7a70a32161134f970cb65b497f1eded381b8bec76d375b598e3ad44c",
-    "write-docs.html": "320bb5dc81874d07fdf45a80fe55af3495bddc1edb90264610a8c15c8d009b38",
-    "render-site.html": "a175dde0348647a6eca426764bf29edc86bef98006c291446566530473c75c0b",
-    "publish-site.html": "ad37dc353ac8c929336e960e98f3bf9bf73e68402e6c7f3e6b8e7e61979c4c02",
-    "troubleshooting.html": "646d783346e1667276a4b92791155d2943bf34361e06e38604994f44896b0320",
-    "releases.html": "ca000227f397bc6a9b8467cc29d0632bd1eec0fd9a78b987208384b41b13189c",
-    "plugin-reference.html": "6772754488e862e13e29aa14bb32292d032716b756e8ff966c39260983cf48ce",
-    "cli-reference.html": "41aa4cd5808822532ba1a8d6b31212a4c21c3926b18550fe4b1b19ebeec9abfe",
-    "assets/editorial/style.css": "c5ab696ac2a57fa4668c81ad3f3f271e3072b6b9071a20df191ec1775a9137ec",
-    "assets/editorial/site.js": "882f87235ac89b3d9d846643761274707ad75f101219cbbbb3abbf4553a28784",
+    "index.html": "dc989ac24ddbae3a18613683c7f3e9d39a6511f1926b2d97ef5114b53190ed65",
+    "getting-started.html": "4f08ea77321680fc1dff32cb51fe706e9410af6b8c509fd6717654de7274378a",
+    "write-docs.html": "48c188a4550c583b0533c14c2088e85a5bbe7f995bbbda2f46a7f57e638d3dd5",
+    "render-site.html": "7b90bee1f6277ed499c94ae8ff6b7a4b28a9069e416968f552c39aa8f9e98c25",
+    "publish-site.html": "94c982cbcef6814096610b04766fcdf4dc880fe6d0d91f84cbcdd063decaabe0",
+    "troubleshooting.html": "93e727e1dc98e5be31ec1492c4db2f8283412f75b62cf434ab52c4a3b09ffdc7",
+    "releases.html": "b849ac2864c471d08e537912ca3ee559e02540101f69292d627ffbdedc22fad5",
+    "plugin-reference.html": "5f7e1b1b820cc398a07283ba2fdbe24e99771066f1fc10809311939412793470",
+    "cli-reference.html": "5efa90da240a2d3f36863e3ebca083efe978654e7e9ec4382f565775df5734d2",
+    "assets/editorial/style.css": "e6c415a2f00194edbd8125db9bd31ec52754f06d81a5343c14e582f91db78a41",
+    "assets/editorial/site.js": "d3e8daf46936874b2ad92dce69ed6aad20c2950fca2ad5f7290902357e7d1179",
     "assets/editorial/mark.svg": "55f8b7a6c0224bb5a84b3afb84b0d9fc8c2786d1639ce367817ad2c473c09b2d",
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   }
