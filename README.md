@@ -30,7 +30,7 @@ npx release-skill@0.9.17 help --json
 <!-- release-skill:capability:external-write-boundary -->
 > **外部写入边界：** 发布会更新 `ifoohoo/skill-family-doc-render-site` 的分支、标签和 GitHub Release；首次上线还会修改 GitHub Pages 设置。创建仓库、批准、发布和启用 Pages 前都需要当前任务的明确授权。
 
-三个发布单元使用同一份生产计划。prepare 前，用目标版本的本地候选完成事实核对、style-guard 审校、覆盖刷新和站点渲染，并对齐渲染器、文档插件与站点的版本真源。这里的 `skill-family-doc-render-workspace` 是渲染配置中的仓库名。
+三个发布单元使用同一份生产计划。prepare 前，用目标版本的本地候选按 style-guard 的脚本拟稿流程整理事实、审核大纲、顺序拟写并核收全文，再完成覆盖刷新和站点渲染，并对齐渲染器、文档插件与站点的版本真源。这里的 `skill-family-doc-render-workspace` 是渲染配置中的仓库名。
 
 prepare 冻结 npm tarball、站点快照和 Git 制品。计划批准前，从计划读取冻结 tarball，在隔离目录安装，再用该安装包对本站执行完整的只读 `--check-project`。工作区输入漂移、制品摘要不匹配或检查失败时停止，不批准该计划。
 
