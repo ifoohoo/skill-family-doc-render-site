@@ -22,7 +22,7 @@ npx release-skill@0.9.17 help --json
 
 ## 维护和发布
 
-页面由私有工作区中的 `docs/public/site/*.md` 和 `pages.json` 生成。完整 HTML、主题 CSS、浏览器脚本和图标来自固定版本的 `editorial` 模板；项目不单独维护主题 CSS 或 JavaScript。公开仓库只接收渲染产物、基线、本说明和许可证。发现内容错误时，应回到 Markdown 源修改并重新渲染，不直接编辑公开产物。
+页面由私有工作区中的 `docs/public/site/*.md` 和 `pages.json` 生成。完整 HTML、主题 CSS、浏览器脚本和图标来自固定版本的 `editorial` 模板；项目不单独维护主题 CSS 或 JavaScript。公开仓库仅接收渲染产物、基线、本说明和许可证。发现内容错误时，应回到 Markdown 源修改并重新渲染，不直接编辑公开产物。
 
 <!-- release-skill:capability:safe-first-command -->
 > **安全起点：** `npx release-skill@0.9.17 help --json` 只获取并显示帮助，不发布站点。需要处理站点时，先在源工作区运行只读评估和渲染检查。
@@ -30,7 +30,7 @@ npx release-skill@0.9.17 help --json
 <!-- release-skill:capability:external-write-boundary -->
 > **外部写入边界：** 发布会更新 `ifoohoo/skill-family-doc-render-site` 的分支、标签和 GitHub Release；首次上线还会修改 GitHub Pages 设置。创建仓库、批准、发布和启用 Pages 前都需要当前任务的明确授权。
 
-三个发布单元使用同一份生产计划。prepare 前，用目标版本的本地候选按 style-guard 的脚本拟稿流程整理事实、审核大纲、顺序拟写并核收全文，再完成覆盖刷新和站点渲染，并对齐渲染器、文档插件与站点的版本真源。这里的 `skill-family-doc-render-workspace` 是渲染配置中的仓库名。
+三个发布单元使用同一份生产计划。prepare 前，用目标版本的本地候选按 style-guard 的脚本拟稿流程整理事实、审核大纲、顺序拟写并核收全文，再完成覆盖刷新和站点渲染，并对齐渲染器、文档插件与站点的版本真源。这里的 `skill-family-doc-render-workspace` 是渲染配置中的仓库名。当前 `docs/public/release.json` 的本地源版本为 0.6.7 候选版，尚未等同于已发布的站点版本。已上线页面的版本信息仍以公开仓库及官方 Release 为准。
 
 prepare 冻结 npm tarball、站点快照和 Git 制品。计划批准前，从计划读取冻结 tarball，在隔离目录安装，再用该安装包对本站执行完整的只读 `--check-project`。工作区输入漂移、制品摘要不匹配或检查失败时停止，不批准该计划。
 
