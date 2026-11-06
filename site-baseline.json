@@ -1,5 +1,5 @@
 {
-  "sha256": "48df38441df6d397c3ea78106722f1c5d1410f4c55d4517641370eb9b5e659aa",
+  "sha256": "4b9754c64334b122d6d9592a9980727856db3f37d3fbdec89c8200e877ec6089",
   "files": [
     ".nojekyll",
     "assets/editorial/mark.svg",
@@ -16,15 +16,15 @@
     "write-docs.html"
   ],
   "digests": {
-    "index.html": "11f027408068b70e856e90140e3c62aef6eae4fd14cb505c933a1360f59594d0",
-    "getting-started.html": "7f7523d9c6965226b068cd3785c5cb66cb31f763bf17e0da61b827bae50ab016",
-    "write-docs.html": "733bf19d9df05ef0d65d91a7008d376a894219302b4aa2fbd0f58322e8c3700a",
-    "render-site.html": "ecda3086a4eec63057c039c87846400299e18479907b22a91a93bdd5363b917d",
-    "publish-site.html": "7e753ca3cea7194994ddec869a7a8899fda982d09eb1951af05deb2bb004ea23",
-    "troubleshooting.html": "55bf2b65885563faae49266880bb12700a4f3216ece157faebb57e1ede69d1d8",
-    "releases.html": "856f858a1a38259c8b7a94480cf6ca787ea9f9c8c5b82e257fb3e019c317f802",
-    "plugin-reference.html": "9ed17401d809a4adaa196d488b3bd7ba975e1e147db060bc4d6c013c11992b8d",
-    "cli-reference.html": "4c2798177d4ae37a5fe2dcd1e2c8e2a8b50cac7f78beff39e6a46fbae7c0b152",
+    "index.html": "6608ea6cb9cdc4acba1b15933ec28b772803b0e3872d63e5d4428809c4207ed6",
+    "getting-started.html": "6ee40d69f0df207932b0e9faa94be895c16b7d446e5829791eb644ebf458f9e1",
+    "write-docs.html": "05eebf357444a13341033d417c83322fc75e57d870e05360528efef6c0be5767",
+    "render-site.html": "575c70d41f40b71698810519cc1fd99162ef6a0f876d28325c44274c366b94ab",
+    "publish-site.html": "cb4dd69dc438abc0c5a517da1d10980546ebc1c44433cf25035e3a2cadba090c",
+    "troubleshooting.html": "8afe615c6a1560e023ba1e0c0840114450caa697f3908aff59b12c388dbad2dc",
+    "releases.html": "151371cecfd75e6affc9893f0c72ea5c07f10cb85c556940cceda2da8957e9c9",
+    "plugin-reference.html": "6e85464846e198c1421ab9140c6ab2423d539eb81a39dc988de95fcca6eaa38f",
+    "cli-reference.html": "09ed17bb03f84c8aeda08f8576f84a23e176788ae8d242664f14f90631e668a7",
     "assets/editorial/style.css": "e6c415a2f00194edbd8125db9bd31ec52754f06d81a5343c14e582f91db78a41",
     "assets/editorial/site.js": "d3e8daf46936874b2ad92dce69ed6aad20c2950fca2ad5f7290902357e7d1179",
     "assets/editorial/mark.svg": "55f8b7a6c0224bb5a84b3afb84b0d9fc8c2786d1639ce367817ad2c473c09b2d",
