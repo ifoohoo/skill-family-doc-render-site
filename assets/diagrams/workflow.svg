@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 230" width="880" height="230" role="img" aria-label="Skill Family Docs 从 Markdown 源码到安全静态站的四步流水线">
+  <defs>
+    <linearGradient id="wf-accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#3730a3"/>
+    </linearGradient>
+    <marker id="wf-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9 z" class="wf-arrow-head"/>
+    </marker>
+  </defs>
+  <style>
+    :root {
+      color-scheme: light dark;
+      color: #0f172a;
+      --wf-bg: rgba(99, 102, 241, 0.04);
+      --wf-border: rgba(100, 116, 139, 0.26);
+      --wf-card: rgba(99, 102, 241, 0.07);
+      --wf-card-stroke: rgba(99, 102, 241, 0.36);
+      --wf-guard-card: rgba(16, 185, 129, 0.08);
+      --wf-guard-stroke: rgba(16, 185, 129, 0.42);
+      --wf-pill: rgba(99, 102, 241, 0.14);
+      --wf-pill-ink: #4338ca;
+      --wf-guard-pill: rgba(16, 185, 129, 0.16);
+      --wf-guard-ink: #047857;
+      --wf-body: rgba(51, 65, 85, 0.86);
+      --wf-line: rgba(79, 70, 229, 0.85);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color: #f1f5f9;
+        --wf-bg: rgba(99, 102, 241, 0.07);
+        --wf-border: rgba(148, 163, 184, 0.24);
+        --wf-card: rgba(99, 102, 241, 0.14);
+        --wf-card-stroke: rgba(129, 140, 248, 0.44);
+        --wf-guard-card: rgba(16, 185, 129, 0.15);
+        --wf-guard-stroke: rgba(52, 211, 153, 0.46);
+        --wf-pill: rgba(129, 140, 248, 0.22);
+        --wf-pill-ink: #c7d2fe;
+        --wf-guard-pill: rgba(52, 211, 153, 0.22);
+        --wf-guard-ink: #6ee7b7;
+        --wf-body: rgba(203, 213, 225, 0.88);
+        --wf-line: rgba(129, 140, 248, 0.92);
+      }
+    }
+    .wf-frame { fill: var(--wf-bg); stroke: var(--wf-border); stroke-width: 1.5; }
+    .wf-card { fill: var(--wf-card); stroke: var(--wf-card-stroke); stroke-width: 1.5; }
+    .wf-card-guard { fill: var(--wf-guard-card); stroke: var(--wf-guard-stroke); stroke-width: 1.5; }
+    .wf-pill { fill: var(--wf-pill); }
+    .wf-pill-text { fill: var(--wf-pill-ink); font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; font-size: 11.5px; font-weight: 700; }
+    .wf-guard-pill { fill: var(--wf-guard-pill); }
+    .wf-guard-text { fill: var(--wf-guard-ink); font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; font-size: 11.5px; font-weight: 700; }
+    .wf-title { fill: currentColor; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; font-size: 15px; font-weight: 700; }
+    .wf-body { fill: var(--wf-body); font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; font-size: 12.5px; }
+    .wf-connector { stroke: var(--wf-line); stroke-width: 2; }
+    .wf-arrow-head { fill: var(--wf-line); }
+    .wf-deliver-pill { fill: #ffffff; fill-opacity: 0.18; }
+    .wf-deliver-pill-text { fill: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; font-size: 11.5px; font-weight: 700; }
+    .wf-deliver-title { fill: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; font-size: 15px; font-weight: 700; }
+    .wf-deliver-body { fill: #e0e7ff; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; font-size: 12.5px; }
+  </style>
+
+  <rect x="1" y="1" width="878" height="228" rx="16" class="wf-frame"/>
+
+  <!-- Step 1 -->
+  <rect x="26" y="42" width="184" height="146" rx="12" class="wf-card"/>
+  <rect x="42" y="56" width="54" height="22" rx="11" class="wf-pill"/>
+  <text x="69" y="71" class="wf-pill-text" text-anchor="middle">01 源码</text>
+  <text x="42" y="102" class="wf-title">Markdown 与清单</text>
+  <text x="42" y="126" class="wf-body">• pages.json 弹性目录</text>
+  <text x="42" y="146" class="wf-body">• 六大原生组件语法</text>
+  <text x="42" y="166" class="wf-body">• 动态注入真实版本号</text>
+
+  <!-- Arrow 1 -->
+  <line x1="214" y1="115" x2="236" y2="115" class="wf-connector" marker-end="url(#wf-arrow)"/>
+
+  <!-- Step 2 -->
+  <rect x="242" y="42" width="184" height="146" rx="12" class="wf-card"/>
+  <rect x="258" y="56" width="54" height="22" rx="11" class="wf-pill"/>
+  <text x="285" y="71" class="wf-pill-text" text-anchor="middle">02 编译</text>
+  <text x="258" y="102" class="wf-title">doc-render 引擎</text>
+  <text x="258" y="126" class="wf-body">• 完整 GFM 与静态着色</text>
+  <text x="258" y="146" class="wf-body">• 生成搜索索引 JSON</text>
+  <text x="258" y="166" class="wf-body">• 注入 ?v=sha8 防缓存</text>
+
+  <!-- Arrow 2 -->
+  <line x1="430" y1="115" x2="452" y2="115" class="wf-connector" marker-end="url(#wf-arrow)"/>
+
+  <!-- Step 3 -->
+  <rect x="458" y="42" width="184" height="146" rx="12" class="wf-card-guard"/>
+  <rect x="474" y="56" width="54" height="22" rx="11" class="wf-guard-pill"/>
+  <text x="501" y="71" class="wf-guard-text" text-anchor="middle">03 守卫</text>
+  <text x="474" y="102" class="wf-title">安全与质量门禁</text>
+  <text x="474" y="126" class="wf-body">• 写盘前解码防路径泄漏</text>
+  <text x="474" y="146" class="wf-body">• SVG 主动脚本拦截</text>
+  <text x="474" y="166" class="wf-body">• 死链与四视口溢出校验</text>
+
+  <!-- Arrow 3 -->
+  <line x1="646" y1="115" x2="668" y2="115" class="wf-connector" marker-end="url(#wf-arrow)"/>
+
+  <!-- Step 4 -->
+  <rect x="674" y="42" width="180" height="146" rx="12" fill="url(#wf-accent)"/>
+  <rect x="690" y="56" width="54" height="22" rx="11" class="wf-deliver-pill"/>
+  <text x="717" y="71" class="wf-deliver-pill-text" text-anchor="middle">04 交付</text>
+  <text x="690" y="102" class="wf-deliver-title">现代静态文档站</text>
+  <text x="690" y="126" class="wf-deliver-body">• 原子替换零损坏更新</text>
+  <text x="690" y="146" class="wf-deliver-body">• 浅/深色 + ⌘K 搜索</text>
+  <text x="690" y="166" class="wf-deliver-body">• 直接托管 GitHub Pages</text>
+</svg>
